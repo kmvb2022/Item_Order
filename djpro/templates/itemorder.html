@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" action="../itembill/">
+    {% csrf_token %}
+    {% for i in data %}
+    <input type="text" value="{{i.iname}}" name="iname">
+    <input type="number" value="{{i.iprice}}" name="iprice">
+    <input type="number" name="qty">
+    <input type="submit" value="submit">
+<!--    <p>{{i.iname}}</p>-->
+    {% endfor %}
+</form>
+</body>
+</html>
